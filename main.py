@@ -24,6 +24,9 @@ def retrieve_and_process_data():
         # Display the results
         print(top_50_data)
 
+        #Delete the data.csv file
+        os.remove("data.csv")
+
 # Schedule the job to run every hour at a specific minute past the hour
 scheduler.add_job(retrieve_and_process_data, 'cron', minute='15')
 
