@@ -1,5 +1,10 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3.11-slim
+
+ENV OPENBLAS_CORETYPE=HASWELL
+
+# Rest of your Dockerfile...
+
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -16,4 +21,6 @@ EXPOSE 80
 # Run main.py when the container launches
 CMD ["python", "main.py"]
 
-ENV OPENBLAS_CORETYPE=ARMV8
+
+
+# Rest of your Dockerfile...
