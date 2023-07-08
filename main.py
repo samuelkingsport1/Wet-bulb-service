@@ -24,7 +24,7 @@ def fetch_data():
         # If the GET request is successful, the status code will be 200
         if response.status_code == 200:
             zipped_data = zipfile.ZipFile(BytesIO(response.content))
-            data_file = zipped_data.open('data.csv')
+            data_file = zipped_data.open('current.csv')
             data_df = pd.read_csv(data_file)
             return data_df
 
