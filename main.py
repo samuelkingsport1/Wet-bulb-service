@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from io import BytesIO
 import logging
 import time
-import APScheduler
+import apscheduler
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
