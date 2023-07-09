@@ -2,4 +2,4 @@ requests
 pandas
 numpy
 python-dotenv
-APScheduler==3.8.0
+apscheduler==3.8.0
