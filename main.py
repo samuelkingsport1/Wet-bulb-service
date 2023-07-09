@@ -7,6 +7,7 @@ import sqlite3
 from dotenv import load_dotenv
 from io import BytesIO
 import logging
+from apscheduler.schedulers.background import BackgroundScheduler
 
 # Load environment variables
 load_dotenv()
@@ -89,4 +90,13 @@ def main():
             store_data(top_50_df)
 
 if __name__ == "__main__":
-    main()
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(main, 'interval', hours=1)
+    scheduler.start()
+    
+    try:
+        # This is here to simulate application activity (which keeps the main thread alive).
+        while True:
+            time.sleep(1)
+    except (KeyboardInterrupt, SystemExit):
+        scheduler.shutdown()

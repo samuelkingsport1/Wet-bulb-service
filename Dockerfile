@@ -20,7 +20,3 @@ EXPOSE 80
 
 # Run main.py when the container launches
 CMD ["python", "main.py"]
-
-
-
-# Rest of your Dockerfile...
