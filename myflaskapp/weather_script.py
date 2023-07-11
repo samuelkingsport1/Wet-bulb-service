@@ -69,6 +69,7 @@ def check_and_create_table(conn):
                 tempc REAL,
                 humidity REAL,
                 wet_bulb_temp REAL,
+                feelsc REAL
                 lat REAL,
                 lon REAL,
                 timestamp TIMESTAMP
@@ -116,7 +117,7 @@ def process_data(data_df):
 def store_data(top_50_df):
     try:
         # Create a connection to the SQLite database
-        conn = sqlite3.connect('weather_data.db')
+        conn = sqlite3.connect('./myflaskapp/weather_data.db')
 
         # Check and create table if necessary
         check_and_create_table(conn)
