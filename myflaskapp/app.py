@@ -13,7 +13,7 @@ def home():
 @app.route('/api/weather_data', methods=['GET'])
 def get_weather_data():
     # Create a connection to the SQLite database
-    conn = sqlite3.connect('weather_data.db')
+    conn = sqlite3.connect('./weather_data.db')
 
     # Create a cursor object
     cur = conn.cursor()
